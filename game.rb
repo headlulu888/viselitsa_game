@@ -23,33 +23,6 @@ class Game
 
   # Основной метод игры "сделать следующий шаг". В качестве параметра принимает
   # букву, которую ввел пользователь.
-
-
-  # def next_step(bukva)
-  #   if status == -1 || status == 1
-  #     return
-  #   end
-  #
-  #   if @good_letters.include?(bukva) || @bad_letters.include?(bukva)
-  #     return
-  #   end
-  #
-  #   if @letters.include?(bukva)
-  #     @good_letters << bukva
-  #
-  #     if @good_letters.uniq.sort == @letters.uniq.sort
-  #       @status = 1
-  #     end
-  #   else
-  #     @bad_letters << bukva
-  #     @errors += 1
-  #
-  #     if @errors >= 7
-  #       @status = -1
-  #     end
-  #   end
-  # end
-
   def next_step(bukva)
 
     if @status == -1 || @status == 1
@@ -84,7 +57,7 @@ class Game
       if bukva == "й"
         good_letters << "и"
       end
-      
+
       if (letters - good_letters).empty?
         @status = 1
       end
